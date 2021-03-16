@@ -14,17 +14,17 @@ class Board {
     // TODO: Using the instance variables numRows, numCols, and numShips, return
     // a 2D array representing the state of the board.
     let grid = [];
-    let shipCount = Math.floor(Math.random() * Math.floor(3));
+    let shipCount = this.numShips;
     for (let i = 0; i < this.numRows; i++) {
-      for(let j = 0; j < this.numCols; j++) {
+      for(let j = 0; j < this.numCols-1; j++) {
         grid.push('🌊')
       }
     }
     // fill 2d with ships or waves
      // console.log('PRE', grid, shipCount)
     while (shipCount > 0) {
-        let randomRow = Math.floor(Math.random() * Math.floor(row))
-        let randomCol = Math.floor(Math.random() * Math.floor(cols))
+        let randomRow = Math.floor(Math.random() * Math.floor(this.numRows))
+        let randomCol = Math.floor(Math.random() * Math.floor(this.numCols))
         // console.log(randomRow,randomCol)
         grid[randomRow][randomCol] = '🚢'
         // console.log(grid[randomRow][randomCol])
