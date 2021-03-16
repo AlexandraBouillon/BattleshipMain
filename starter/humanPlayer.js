@@ -26,6 +26,7 @@ class HumanPlayer {
     // TODO: Ask the user for their move and process the answer using the rl
     // interface.Invoke the callback function (processMove), passing in
     // the given answer in the form of an array representing [row, col]
+
   }
 
   processGameOver(isWon) {
