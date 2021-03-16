@@ -1,14 +1,42 @@
 class Board {
-  constructor() {
+  constructor(numRows, numCols, numShips) {
     // TODO: Set up constructor that sets the numRos, numCols, and numShips.
+    this.numRows = numRows;
+    this.numCols = numCols;
+    this.numShips = numShips;
     // TODO: Set this.grid equal to the return value of the instance method
-    // populateGrid().
+    this.grid = this.populateGrid();
   }
+
+
 
   populateGrid() {
     // TODO: Using the instance variables numRows, numCols, and numShips, return
     // a 2D array representing the state of the board.
+    let grid = [];
+    let shipCount = Math.floor(Math.random() * Math.floor(3));
+    for (let i = 0; i < this.numRows; i++) {
+      for(let j = 0; j < this.numCols; j++) {
+        grid.push('🌊')
+      }
+    }
+    // fill 2d with ships or waves
+     // console.log('PRE', grid, shipCount)
+    while (shipCount > 0) {
+        let randomRow = Math.floor(Math.random() * Math.floor(row))
+        let randomCol = Math.floor(Math.random() * Math.floor(cols))
+        // console.log(randomRow,randomCol)
+        grid[randomRow][randomCol] = '🚢'
+        // console.log(grid[randomRow][randomCol])
+        shipCount--
+        // console.log(shipCount)
+    }
+    // // fill 2d with ships or waves
+    return grid;
   }
+
+
+
 
   display() {
     // TODO: Print the game board with marks on any spaces that have been fired
